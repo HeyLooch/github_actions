@@ -13,7 +13,7 @@ module.exports = {
 		filename: production
 			? 'static/scripts/[name].[contenthash].js'
 			: 'static/scripts/[name].js', // имя нашего бандла
-		publicPath: '/',
+		publicPath: process.env.PUBLIC_PATH ? process.env.PUBLIC_PATH : '/',
 		chunkFilename: 'static/scripts/[name].[contenthash].bundle.js',
 	},
 	//Нужно помочь вебпаку научится работать с jsx и tsx файлами для этого используют ts loader
