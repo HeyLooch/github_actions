@@ -14,7 +14,7 @@ module.exports = {
 			? 'static/scripts/[name].[contenthash].js'
 			: 'static/scripts/[name].js', // имя нашего бандла
 		publicPath: '/',
-		chunkFilename: 'static/scripts/[name].[contenthash].bundle.js'
+		chunkFilename: 'static/scripts/[name].[contenthash].bundle.js',
 	},
 	//Нужно помочь вебпаку научится работать с jsx и tsx файлами для этого используют ts loader
 	module: {
@@ -89,6 +89,7 @@ module.exports = {
 				: 'static/styles/[name].css',
 		}),
 		new webpack.EnvironmentPlugin({
+			PUBLIC_PATH: null,
 			NODE_ENV: 'development', // значение по умолчанию 'development' если переменная process.env.NODE_ENV не передана
 		}),
 	],
